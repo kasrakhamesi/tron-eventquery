@@ -49,6 +49,7 @@ public class TransferController {
       @RequestParam(value = "from", required = false, defaultValue = "") String from,
       @RequestParam(value = "to", required = false, defaultValue = "") String to,
       @RequestParam(value = "token", required = false, defaultValue = "") String token
+      @RequestParam(value = "address", required = false, defaultValue = "") String address
   ) {
     QueryFactory query = new QueryFactory();
     query.setTransferType();
@@ -62,6 +63,10 @@ public class TransferController {
 
     if (token.length() != 0) {
       query.setTransactionToken(token);
+    }
+
+    if (address.length() != 0) {
+      query.setTransactionByAddr(address);
     }
 
     query.setPageniate(QueryFactory.setPagniateVariable(start, limit, sort));
