@@ -48,7 +48,7 @@ public class TransferController {
       /****************** Filter parameters *****************************************************/
       @RequestParam(value = "from", required = false, defaultValue = "") String from,
       @RequestParam(value = "to", required = false, defaultValue = "") String to,
-      @RequestParam(value = "token", required = false, defaultValue = "") String token
+      @RequestParam(value = "token", required = false, defaultValue = "") String token,
       @RequestParam(value = "address", required = false, defaultValue = "") String address
   ) {
     QueryFactory query = new QueryFactory();
